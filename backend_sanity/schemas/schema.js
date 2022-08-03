@@ -8,8 +8,11 @@ import abouts from './abouts'
 import brands from './brands'
 import contact from './contact'
 import experiences from './experiences'
+<<<<<<< HEAD
 import skills from './skills'
 import workExperience from './workExperience'
+=======
+>>>>>>> a8d5c6262d06525feef2dc6fa1da630dc812f5f4
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -23,8 +26,12 @@ export default createSchema({
     abouts,
     brands,
     contact,
+<<<<<<< HEAD
     experiences,
     skills,
     workExperience
+=======
+    experiences
+>>>>>>> a8d5c6262d06525feef2dc6fa1da630dc812f5f4
   ]),
 })

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
+import { motion } from 'framer-motion';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
@@ -21,6 +21,7 @@ const Testimonial = () => {
 
     client.fetch(query).then((data) => {
       setTestimonials(data);
+      console.log(data)
     });
 
     client.fetch(brandsQuery).then((data) => {
@@ -28,12 +29,13 @@ const Testimonial = () => {
     });
   }, []);
 
+
   return (
     <>
       {testimonials.length && (
         <>
           <div className="app__testimonial-item app__flex">
-            <img src={urlFor(testimonials[currentIndex].imgurl)} alt={testimonials[currentIndex].name} />
+            <img src={urlFor(testimonials[currentIndex].imageurl)} alt="testimonial" />
             <div className="app__testimonial-content">
               <p className="p-text">{testimonials[currentIndex].feedback}</p>
               <div>
@@ -54,7 +56,6 @@ const Testimonial = () => {
           </div>
         </>
       )}
-
       <div className="app__testimonial-brands app__flex">
         {brands.map((brand) => (
           <motion.div
@@ -66,9 +67,10 @@ const Testimonial = () => {
           </motion.div>
         ))}
       </div>
+
     </>
-  )
-}
+  );
+};
 
 export default AppWrap(
   MotionWrap(Testimonial, 'app__testimonial'),

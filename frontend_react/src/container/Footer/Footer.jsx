@@ -20,6 +20,24 @@ const Footer = () => {
         <a href='tel:+1 (236) 886-9744' className='p-text'>+1 (236) 886-9744</a>
         </div>
       </div>
+
+      <div className='app__footer-form app__flex'>
+        <div className='app__flex'>
+          <input className='p-text' placeholder='Your Name' name='name' value={name} onChange={hangleChangeInput} />
+        </div>
+        <div className='app__flex'>
+          <input className='p-text' placeholder='Your Email' name='email' value={email} onChange={hangleChangeInput} />
+        </div>
+        <div>
+          <textarea
+            className='p-text'
+            placeholder='Your Message'
+            value={message}
+            name={message}
+            onChange={handleChangeInput}
+          />
+        </div>
+      </div>
     </>
   )
 }

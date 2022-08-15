@@ -15,4 +15,19 @@
     align-items: center;
     flex-wrap: wrap;
     margin: 4em 2rem 2rem;
+
+    .app__footer-card {
+        min-width: 290px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    
+        margin: 1rem 0;
+        padding: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: #fef4f5;
+        
+    }
   }

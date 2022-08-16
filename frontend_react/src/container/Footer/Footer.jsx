@@ -8,7 +8,25 @@ import './Footer.scss';
 const Footer = () => {
 const [formData, setFormData] = useState({ name: '', email: ''});
 const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-const [Loading, setLoading] = useState(false)
+const [loading, setLoading] = useState(false);
+
+const { username, email, message } = formData;
+
+const handleChangeInput = (e) => {
+  const { name, value } = e.target;
+  setFormData({ ...formData, [name]: value });
+};
+
+const handleSubmit = () => {
+  setLoading(true);
+
+  const contact = {
+    _type: 'contact',
+    name: formData.username,
+    email: formData.email,
+    message: formData.message,
+  };
+
   return (
     <>
       <h2 className='head-text'>Take a coffee & chat with me </h2>
@@ -39,7 +57,7 @@ const [Loading, setLoading] = useState(false)
             name={message}
             onChange={handleChangeInput}
           />
-          <button type='button' className='p-text' onClick={handleSubmit}>Send Message</button>
+          <button type='button' className='p-text' onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
         </div>
       </div>
     </>
